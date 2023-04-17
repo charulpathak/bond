@@ -163,6 +163,7 @@ def fishgen(request):
 
 def habitparameter(request):
     if request.method == 'POST':
+        
         fm = HabitatparameterRegistration(request.POST)
         if fm.is_valid():
             fm.save()
@@ -180,7 +181,7 @@ def checkshow(request):
 
 
 def forms(request):
-    if request.method == 'POST':
+    if request.method == 'POST':     
         rs = FormsRegistration(request.POST)
         if rs.is_valid():
             rs.save()
