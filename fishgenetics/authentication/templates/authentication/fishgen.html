@@ -1,0 +1,123 @@
+{% csrf_token %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title></title>
+<style>
+
+body{
+    background:linear-gradient(to bottom,#005de3,#01bbf0);
+    height:100vh;
+}
+
+.nav-area{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-area ul ul{
+    transition: all 300ms ease-in-out 300ms;
+    transform:rotateX(-90deg);
+    transform-origin: 0 0;
+    backface-visibility: hidden;
+}
+
+.nav-area ul li:hover >ul{
+    transition: all 300ms ease-in-out 0ms;
+    transform:rotateX(0);
+
+}
+
+.nav-area ul{
+    padding:0;
+    list-style: none;
+    position: relative;
+    display:inline-block;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    background: #333;
+    color:#fff;
+}
+
+.na-area ul:after{
+    content:'';
+    clear: both;
+    display: block;
+}
+
+.nav-area ul li{
+    float:left;
+    transform-style: preserve-3d;
+    perspective: 300px;
+    border-right: 1px solid #fff;
+}
+
+.nav-area ul > li :last-of-type{
+    border-right: none;
+}
+.nav-area ul li :hover{
+    background: #1b1919;
+}
+.na-area ul li :hover>a{
+    color:#000;
+}
+.nav-area ul li a{
+    display: block;
+    padding:10px 65px;
+    text-transform: uppercase;
+    font-family: baloo;
+}
+
+.nav-area ul ul {
+    position: absolute;
+    top:100%;
+    padding:0;
+    background: #333;
+}
+.nav-area ul ul li{
+   float:none;
+   position: relative;
+   border: none;
+}
+
+.nav-area ul ul li a{
+    padding:10px 45px;
+    text-align: center;
+}
+</style>
+
+
+</head>
+<body>
+  <form action="/fishgen"  method="post">
+        
+    <nav class="nav-area">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/resources">Form</a></li>
+            <li><a href="/habitatparameter">Habitat Parameter</a></li>
+
+          <li><a href="#">Fish biodiversity</a>
+            <ul>
+                <li><a href="/fishbiodiversityprimary">Primary information</a></li>
+                <li><a href="/fishsec">Secondary information</a></li>
+                <li><a href="/exoticfish">Exotic Fish species</a></li>
+             </ul>
+        
+          </li>  
+          
+        </ul>
+    </nav>
+    
+  </form>
+    
+</body>
+</html>

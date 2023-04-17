@@ -1,0 +1,25 @@
+{% extends 'authentication/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+      <h2 class="text-center alert alert-info"><u><strong>Add Form Data</strong></u></h2>
+      <br><br>
+        <div class="main-container">
+          <form action="#" method="post">
+            {% csrf_token %}            
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Add">
+            <button><a href="/checkshow">View</a></button>&nbsp;
+      <button><a href="/resources">Back</a></button>&nbsp;
+      <button><a href="/exoticfish">Next</a></button>
+            
+          </form>
+         
+
+        </div>
+      </div>
+{% endblock content %}
+
+
+
+>

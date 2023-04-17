@@ -1,0 +1,79 @@
+{% extends 'authentication/base.html' %}
+{% block content %}
+
+    <div  style="overflow-x: auto; background-color: rgb(155, 204, 245); opacity: 0.8; width:90%; overflow: auto;" >
+        
+        {% if fr %}
+        
+            <table class="table table-hover" style="border-collapse: separate; resize: both; overflow: auto;">
+                <h4 class="table_heading">Exotic Fish  Data</h4><br>
+                <thead>
+                    <tr style="color: rgb(7, 8, 7); text-decoration-line: underline;">
+                       
+                        <th class="th" scope="col">Siteid</th>
+                        <th class="th" scope="col">Name_of_fish_genus_and_species</th>
+                        <th class="th" scope="col">Local_name</th>
+                        <th class="th" scope="col">Family</th>
+                        <th class="th" scope="col">Total Number</th>
+                        <th class="th" scope="col">Weight</th>
+                        <th class="th" scope="col">Proportion To Catch</th>
+                        <th class="th" scope="col">Gear Used</th>                        
+                        <th class="th" scope="col">Action<br> </th>
+                    </tr>
+                </thead>
+                
+                
+                <tbody>
+                    {% for bt in fr %}                                     
+                        <tr style="color: rgb(7, 8, 7); font-weight: 700;">
+                            
+                            <td class="th">{{bt.siteid}}</td>
+                            <td class="th">{{bt.name_of_fish_genus_and_species}}</td>
+                            <td class="th">{{bt.local_name}}</td>  
+                            <td class="th">{{bt.family}}</td>
+                            <td class="th">{{bt.total_number}}</td>
+                            <td class="th">{{bt.weight}}</td>           
+                            <td class="th">{{bt.proportion_to_catch}}</td>
+                            <td class="th">{{bt.gear_used}}</td>
+                            <td class="th">
+                            <a href="#" class="btn btn-warning btn-sm " style="font-weight: 700;">Edit</a>
+                            <form action="#" method="post" class="d-inline">
+                                {% csrf_token %}
+                                <input type="submit" style="font-weight: 700;" class="btn btn-danger" value="Delete" >
+                            </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <h4 class="text-center alert alert-warning">No Records</h4>
+        {% endif %}
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+    
+                <span class="current-page">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                </span>
+    
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>                
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+        <div style="display:flex; justify-content:center; align-items:center; font-size: 20px;">
+            <button>Back</button>&nbsp;
+            <button>Home</button>
+        </div>
+
+    </div>
+
+
+{% endblock content %}

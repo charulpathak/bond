@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* yaha change kiya h maine  dkeh le  */
+html{
+    
+    background-image: url('sea2.jpg');
+     background-size: cover;
+
+}
+
+.container{
+    border-color: rgb(53, 1, 1);
+    padding-top: 10%;
+   
+    
+}
+.main-container
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 30px 10px;
+    font-size:14pt;
+    background-image: url('{% static "sea2.jpg" %}') ;
+    background-position: fixed;
+    background-repeat: no-repeat;
+    width:500px;
+    padding: 50px;
+    margin: auto;
+    border: 5px solid white;
+    border-radius: 20px;
+    box-shadow:2px 2px 6px 6px #171A2B ;
+    text-align: center;
+}
+
+.heading{
+    text-align: center;
+    color:rgba(2, 19, 66, 0.937);
+}
+
+
+h1{
+    font-size: 35px;
+}
+
+.labels
+{
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:rgb(1, 27, 49);
+    width: 5000px;
+}
+
+.text,.number{
+    align-content: center;
+    background:rgb(4, 122, 131);
+    height: 25px;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    border: 3px solid rgb(7, 60, 104);
+
+}
+
+
+.submit
+{
+    height: 25px;
+    width: 200px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    margin: 0;
+    position: absolute;
+    background: yellowgreen;
+
+    
+}
+#submit-bt:hover
+{
+    color: rgb(240, 226, 226);
+    background:blue;
+    border: none;
+    border-radius: 20px;
+}

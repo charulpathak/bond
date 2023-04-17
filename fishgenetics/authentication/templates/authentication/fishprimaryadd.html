@@ -1,0 +1,314 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BasePage</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'mainstyle.css' %}">
+        <!--<link rel="stylesheet" type="text/css" href="{% static 'style2.css' %}">-->
+        <style>
+            .cell{
+                resize: both; overflow: auto; width: 100%; height: 100%;
+            }
+
+            
+            .container{
+                padding: 60px;
+            }
+            .main-container{
+                /*display: grid;*/
+                grid-template-columns: auto auto;
+                grid-gap: 30px 10px;
+                font-size:14pt;
+                background-image: url('{% static "sea2.jpg" %}') ;
+                background-position: fixed;
+                background-repeat: no-repeat;
+                width:500px;
+                padding: 50px;
+                margin: auto;
+                border: 5px solid rgb(12, 0, 0);
+                border-radius: 20px;
+                box-shadow:2px 2px 6px 6px #171A2B ;
+                text-align: center;
+            }
+            .th {
+                border: 1px solid (37, 2 , 2);
+                text-align: center;
+            }
+            .table_heading{
+                border: 1px solid rgb(32, 1, 1);
+                text-align: center;
+                font-size: 35px; 
+                text-decoration:underline;           
+            }
+            .table_button{
+                font-size: 20px; 
+
+            }
+
+            /* Code for Menu Bar */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+        body{
+            font-family: cursive;
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        /*.navbar{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: teal;
+            color: #fff;
+        }*/
+
+        .nav-links a {
+            color: #110101;
+        }
+
+        /* LOGO */
+
+        .logo{
+            font-size: 32px;
+        }
+
+        /* NAVBAR MENU */
+
+        .menu{
+            display: flex;
+            gap: 1em;
+            font-size: 18px;
+        }
+
+        .menu li:hover{
+            background-color: #808183;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .menu li {
+            padding: 5px 14px;
+        }
+
+        /* DROPDOWN MENU */
+
+        .services{
+            position: relative; 
+        }
+
+        .dropdown{
+            background-color: rgb(7, 68, 126);
+            padding: 1em 0;
+            position: absolute; /*WITH RESPECT TO PARENT*/
+            display: none;
+            border-radius: 8px;
+            top: 35px;
+        }
+
+        .dropdown li + li {
+            margin-top: 10px;
+        }
+
+        .dropdown li {
+            padding: 0.5em 1em;
+            width: 8em;
+            text-align: center;
+        }
+
+        .dropdown li:hover {
+            background-color: #074569;
+        }
+
+        .services:hover .dropdown {
+            display: block;
+        }
+
+        input[type=checkbox]{
+            display: none;
+        } 
+
+        /*HAMBURGER MENU*/
+
+        .hamburger {
+            display: none;
+            font-size: 50px;
+            user-select: none;
+        }
+
+        /* APPLYING MEDIA QUERIES */
+
+        @media (max-width: 768px) {
+
+            .menu { 
+                display:none;
+                position: absolute;
+                background-color:rgb(247, 252, 252);
+                right: 0;
+                left: 0;
+
+                text-align: center;
+                padding: 16px 0;
+
+            }
+
+        .menu li:hover{
+            display: inline-block;
+            background-color:#000407;
+            transition: 0.3s ease;
+        }
+
+        .menu li + li {
+            margin-top: 12px;
+        }
+
+        input[type=checkbox]:checked ~ .menu{
+            display: block;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+        }
+
+        .dropdown li:hover {
+            background-color: #0c3872;
+        }
+    }
+
+
+    
+            
+
+    </style>
+
+    </head>
+    <body>
+        <section>
+        <div class="jumbotron text-center" style="background-color: rgb(6, 57, 105);">
+            <h1 class="display-4" style="color: rgb(10, 9, 9);"></h1>
+        </div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <input type="checkbox" id="checkbox_toggle" />
+                <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+                <div class=&rdquo;menu&rdquo;>...</div>
+
+                <div class="menu">
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="">About</a></li>
+                   <!-- <li class="services">
+                        <a href="/">Enter Data</a>
+                        <ul class="dropdown">
+                            <ul><a href="/fishprimaryadd">Fishprimary</a></ul>
+                           
+
+                        </ul>
+                        
+                    </li>
+                    <li class="services">
+                        <a href="/">View Data</a>
+                        <ul class="dropdown">
+                            <ul><a href="/fishprimaryshow">Fishprimary</a></ul>
+                            
+
+                        </ul>
+                        
+                    </li> -->          
+                </div>
+
+            </ul>      
+        </nav><br><br>
+        <div>
+            <div style="padding: 10%;"> <!-- style="width:fit-content; padding: 10%; margin-left: 0%;" -->
+                {% block content %}
+                <form action="#" method="post">
+                   
+                  {% csrf_token %}
+                  <div class="main-container"> 
+                                 
+                          <div>                 
+                              <label class="labels">River_ID:</label>
+                              <input type="number" class="number" id="" name="" placeholder=""/>
+                              
+                              
+                          </div>
+                          <div>
+                              <label class="labels">Name_of_river:</label>
+                              <input type="text" class="text" id="" name="" placeholder=""/>
+                          </div>  
+                          <div>
+                              <label class="labels">Name_of_sampling_site:</label>
+                              <input type="text" class="text" id="" name="" placeholder=""/>
+                              
+                          </div>    
+                          <div>
+                              <label class="labels">Date_of_collection:</label>
+                              <input type="date" class="number" id="" name="" placeholder=""/>
+                          </div>          
+                          <div>
+                              
+                              <label class="labels">Collection_of_source:</label>
+                              <input type="text" class="text" id="" name="year_acc" placeholder=""/>
+                              
+                          </div><br>
+                          <div>
+                              
+                            <label class="labels">Sampling_area:</label>
+                            <input type="number" class="number" id="" name="" placeholder=""/>
+                            
+                          </div><br>
+                          <div>
+                              
+                            <label class="labels">Duration_of_fishing</label>
+                            <input type="time" class="time" id="" name="" placeholder=""/>
+                            
+                          </div><br>
+                          
+                          <div>
+                            <label class="labels">Total_catch</label>
+                            <input type="number" class="text" id="" name="catch" placeholder="catch"/>
+                           </div><br>
+          
+          
+                          
+                          <div>
+                              <input type="submit" class="submit" id="submit-bt" name="submit-bt" value="Add Data"/> 
+                          </div>  <br>           
+                          
+                      </div>
+                      <br>
+                            
+                  </form>
+                {% endblock content %}
+            </div>            
+        </div>  
+    </section>
+    <div>
+        <footer class="bg-dark text-white pt-5 pb-4" style="text-align: center;">
+            <h4>Copyright &copy 2022 - All Rights Reserved - ICAR-National Bureau of Fish Genetic Resources</h4>
+        </footer>
+    </div> 
+        
+    </body>
+</html>
