@@ -198,14 +198,16 @@ def showdata(request):
 
 def updateform_data(request, id):
     if request.method == 'POST':
-        rs = form.objects.get(pk=id)
-        rs = FormsRegistration(request.POST, instance=checkprod)
-        if rs.is_valid():
-            rs.save()
+        bi = form.objects.get(pk=id)
+        bs = FormsRegistration(request.POST, instance=bi)
+        if bs.is_valid():
+            bs.save()
     else:
-        checkprod = form.objects.get(pk=id)
-        rs = FormsRegistration(instance=checkprod)
-    return render(request, 'authentication/updateform.html',{'form':rs})
+        bi = form.objects.get(pk=id)
+        bs = FormsRegistration(instance=bi)
+    return render(request, 'authentication/updateform.html',{'form':bs})
+
+
 
 
 
@@ -257,7 +259,9 @@ def exoticfish(request):
     fd = fishbioforexoticfish.objects.all()
     return render(request,'authentication/exoticfish.html',{'form':fm, 'fdd':fd}) 
 
-
+def fishdata(request):
+    shf = fishbiodiversitysec.objects.all()
+    return render(request,'authentication/exoticfishshow.html', {'fr':shf}) 
 
 
  

@@ -9,15 +9,15 @@
                 <h4 class="table_heading">Exotic Fish  Data</h4><br>
                 <thead>
                     <tr style="color: rgb(7, 8, 7); text-decoration-line: underline;">
-                       
                         <th class="th" scope="col">Siteid</th>
                         <th class="th" scope="col">Name_of_fish_genus_and_species</th>
                         <th class="th" scope="col">Local_name</th>
                         <th class="th" scope="col">Family</th>
-                        <th class="th" scope="col">Total Number</th>
+                        <th class="th" scope="col">Total_Number</th>
                         <th class="th" scope="col">Weight</th>
-                        <th class="th" scope="col">Proportion To Catch</th>
-                        <th class="th" scope="col">Gear Used</th>                        
+                        <th class="th" scope="col">Proportion_To_Catch</th>
+                        <th class="th" scope="col">Gear_Used</th>   
+                                             
                         <th class="th" scope="col">Action<br> </th>
                     </tr>
                 </thead>
@@ -26,7 +26,6 @@
                 <tbody>
                     {% for bt in fr %}                                     
                         <tr style="color: rgb(7, 8, 7); font-weight: 700;">
-                            
                             <td class="th">{{bt.siteid}}</td>
                             <td class="th">{{bt.name_of_fish_genus_and_species}}</td>
                             <td class="th">{{bt.local_name}}</td>  
@@ -69,8 +68,8 @@
         </div>
 
         <div style="display:flex; justify-content:center; align-items:center; font-size: 20px;">
-            <button>Back</button>&nbsp;
-            <button>Home</button>
+            <button><a href="/exoticfish">Back</a></button>&nbsp;
+            <button><a href="/fishgens">Home</a></button>
         </div>
 
     </div>

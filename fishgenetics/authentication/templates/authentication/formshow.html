@@ -10,7 +10,7 @@
                 <thead>
                     <tr style="color: rgb(7, 8, 7); text-decoration-line: underline;">
                        <!--<th class="th" scope="col">Id<br> </th>-->
-                        <th class="th" scope="col">RiverID</th>
+                       <!-- <th class="th" scope="col">RiverID</th>-->
                         <th class="th" scope="col">Nameofriver</th>
                         <th class="th" scope="col">Date</th>
                         <th class="th" scope="col">Collector</th>
@@ -29,9 +29,10 @@
                 <tbody>
                     {% for bt in fr %}                                     
                         <tr style="color: rgb(7, 8, 7); font-weight: 700;">
-                            <!--<th class="th" scope="row">{{bt.id}}</th>-->
-                            <td class="th">{{bt.riverid}}</td>
+                            <!--<th class="th" scope="row">{{bt.id}}</th>
+                            <td class="th">{{bt.riverid}}</td>-->
                             <td class="th">{{bt.name_of_river}}</td>
+                            <td class="th">{{bt.date}}</td>
                             <td class="th">{{bt.collector}}</td>  
                             <td class="th">{{bt.locality}}</td>
                             <td class="th">{{bt.block}}</td>
@@ -39,10 +40,7 @@
                             <td class="th">{{bt.state}}</td>
                             <td class="th">{{bt.latitude}}</td>
                             <td class="th">{{bt.longitude}}</td>
-                            <td class="th">{{bt.altitude}}</td>
-                                                                    
-                        
-                              
+                            <td class="th">{{bt.altitude}}</td>    
                             <td class="th">
                             <a href="/updateform" class="btn btn-warning btn-sm " style="font-weight: 700;">Edit</a>
                             <form action="#" method="post" class="d-inline">

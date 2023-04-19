@@ -29,7 +29,7 @@ urlpatterns = [
     path('fishsec',views.fishsec,name="fishsec"),
     path('fishdata',views.fishdata,name="fishshow"),
 
-    path('exoticfish',views.exoticfish,name="fishsec"),
+    path('exoticfish',views.exoticfish,name="exoticfish"),
     path('fishdata',views.fishdata,name="fishshow"),
 
 
